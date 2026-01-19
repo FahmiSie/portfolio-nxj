@@ -3,12 +3,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projectsData } from "@/components/projects";
-
+import LogoStrip from "../logo-strip";
 export default function HomeSections() {
   const featuredProjects = projectsData.slice(0, 3);
 
   return (
     <>
+      <LogoStrip />
+
       {/* Featured Projects Section */}
       <section className="home-section featured-projects">
         <div className="container">

@@ -9,6 +9,11 @@ body {
   background-color: #0b0b0b;
   color: white;
   overflow-x: hidden;
+  /* Global grid background for all pages */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 .navbar {
@@ -121,7 +126,6 @@ body {
   max-width: 400px;
   opacity: 0.7;
   font-size: 23px;
-  white-space: nowrap;
 }
 
 .scroll-indicator{
@@ -130,6 +134,34 @@ body {
   left: 53%;
   transform: translateX(-50%);
   opacity: 0.6;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: white;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .marquee{
@@ -1236,6 +1268,43 @@ body {
 
 /* Responsive Design */
 @media (max-width: 968px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background-color: #0a0a0a;
+    width: 70%;
+    max-width: 320px;
+    height: calc(100vh - 80px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+  }
+
   .container {
     padding: 120px 30px 60px;
   }
@@ -1365,6 +1434,79 @@ body {
 .view-all-btn:hover {
   background: #ff5c35;
   color: black;
+}
+
+/* Logo Strip */
+.logo-strip {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.logo-strip-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo-strip-kicker {
+  color: #ff5c35;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.logo-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.logo-card-link {
+  text-decoration: none;
+}
+
+.logo-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  min-height: 150px;
+}
+
+.logo-card:hover {
+  background: rgba(255, 92, 53, 0.07);
+  border-color: rgba(255, 92, 53, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(255, 92, 53, 0.15);
+}
+
+.logo-card-inner {
+  width: 120px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+}
+
+.logo-img-el {
+  max-width: 100%;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));
+}
+
+.logo-name {
+  color:#ff5835;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  text-align: center;
 }
 
 /* CTA Section */

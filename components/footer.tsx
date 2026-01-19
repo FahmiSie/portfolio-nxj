@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image"; // Import Image untuk optimasi
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,22 +17,22 @@ export default function Footer() {
     { name: "Contact", href: "/contact" }
   ];
 
-  // Tambahkan path icon sesuai folder public kamu
+  
   const socialLinks = [
     { 
       name: "GitHub", 
       href: "https://github.com/fahmisie", 
-      icon: "/image/profile/fam.png" 
+      icon: "/image/logos/github.png" 
     },
     { 
       name: "LinkedIn", 
       href: "https://www.linkedin.com/in/fahmiaqilamaulana", 
-      icon: "/image/profile/fam.png" 
+      icon: "/image/logos/—Pngtree—linkedin social media icon design_3654782.png" 
     },
     { 
       name: "Email", 
       href: "mailto:famtech.co@gmail.com", 
-      icon: "/image/profile/fam.png"  
+      icon: "/image/logos/famco.png"
     }
   ];
 

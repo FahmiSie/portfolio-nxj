@@ -5,9 +5,9 @@ import Lanyard3D from "@/components/lanyard-3d";
 
 export default function AboutPage() {
   const experiences = [
-    { year: "2024", title: "Fullstack Developer", desc: "Building modern web applications" },
-    { year: "2023", title: "Tech Enthusiast", desc: "Exploring finance-tech integration" },
-    { year: "2022", title: "Student", desc: "SMK Telkom Malang - RPL" }
+    { year: "2026 - Right Now", title: "Fullstack Developer", desc: "Building modern web applications" },
+    { year: "2024 - Right Now", title: "Student at", desc: "SMK Telkom Malang - RPL Expertise" },
+    { year: "2021 - Right Now", title: "Finance Analys", desc: "Exploring finance-tech, Investment Analysis" }
   ];
 
   return (
