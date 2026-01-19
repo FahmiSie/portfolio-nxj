@@ -28,32 +28,34 @@ export default function ContactPage() {
 
   const contactMethods = [
     { 
-      icon: "📧", 
-      iconPath: "/images/social/email-icon.svg", // Letakkan icon di public/images/social/email-icon.svg
+      icon: "", 
+      iconPath: "", 
       label: "Email", 
-      value: "fahmi@example.com", 
-      link: "mailto:fahmi@example.com" 
+      value: "famtech.co@gmail.com", 
+      link: "mailto:famtech.co@gmail.com" 
     },
     { 
-      icon: "💬", 
-      iconPath: "/images/logos/linkedin.svg", // Letakkan logo di public/images/logos/linkedin.svg
+      icon: "", 
+      iconPath: "", 
       label: "LinkedIn", 
-      value: "linkedin.com/in/fahmi", 
-      link: "#" 
+      value: "linkedin.com/in/fahmiaqilamaulana", 
+      // Link diperbaiki agar mengarah ke profil asli
+      link: "https://www.linkedin.com/in/fahmiaqilamaulana" 
     },
     { 
-      icon: "🐙", 
-      iconPath: "/images/logos/github.svg", // Letakkan logo di public/images/logos/github.svg
+      icon: "", 
+      iconPath: "", 
       label: "GitHub", 
-      value: "github.com/fahmi", 
-      link: "#" 
+      value: "github.com/fahmisie",
+      // Link diperbaiki dengan HTTPS agar tidak dianggap folder lokal
+      link: "https://github.com/fahmisie" 
     },
     { 
       icon: "📱", 
-      iconPath: "/images/social/phone-icon.svg", // Letakkan icon di public/images/social/phone-icon.svg
+      iconPath: "/images/social/phone-icon.svg", 
       label: "Phone", 
-      value: "+62 XXX XXX XXXX", 
-      link: "tel:+62" 
+      value: "+62 82139163361", 
+      link: "https://wa.me/6282139163361" 
     }
   ];
 
