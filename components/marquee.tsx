@@ -1,26 +1,29 @@
 "use client";
 
 export default function Marquee(){
+    const skills = [
+        "Fullstack Developer & Finance Enthusiast",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "NestJS",
+        "Node.js",
+        "MySQL",
+        "AWS",
+        "JavaScript",
+        "ROI Analysis",
+        "Data-Driven Decisions",
+        "Tailwind CSS",
+        "Framer Motion"
+    ];
+
     return (
         <div className="marquee">
-        <div className="marquee-track">
-        <span>Fullstack Developer & Finance Enthusiast</span>
-        <span>NestJs</span>
-        <span>Aws</span>
-        <span>MySql</span>
-        <span>Javascript</span>
-        <span>ROI</span>
-        <span>Data-Driven Decision Investment</span>
-        <span>NextJs</span>
-        <span>Fullstack Developer & Finance Enthusiast</span>
-        <span>NestJs</span>
-        <span>MySql</span>
-        <span>Aws</span>
-        <span>Javascript</span>
-        <span>ROI</span>
-        <span>Data-Driven Decision Investment</span>
-        <span>NextJs</span>
-        </div>
+            <div className="marquee-track">
+                {[...skills, ...skills].map((skill, index) => (
+                    <span key={index} className="marquee-span">{skill}</span>
+                ))}
+            </div>
         </div>
     )
 }
