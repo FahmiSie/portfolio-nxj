@@ -22,22 +22,22 @@ export default function Footer() {
     { 
       name: "GitHub", 
       href: "https://github.com/fahmisie", 
-      icon: "/image/logos/github.png" 
+      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" 
     },
     { 
       name: "LinkedIn", 
       href: "https://www.linkedin.com/in/fahmiaqilamaulana", 
-      icon: "/image/logos/—Pngtree—linkedin social media icon design_3654782.png" 
+      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" 
     },
     { 
       name: "Email", 
       href: "mailto:famtech.co@gmail.com", 
-      icon: "/image/logos/famco.png"
+      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg"
     }
   ];
 
   return (
-    <footer className="footer border-t border-white/10 mt-20">
+    <footer className="footer border-t border-white/10 mt-20"> 
       <div className="footer-container">
         <motion.div
           className="footer-section"

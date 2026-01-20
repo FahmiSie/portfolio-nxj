@@ -240,7 +240,27 @@ export default function BlogDetail({ params }: { params: { slug: string } }) {
 
           <div 
             className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>').replace(/```bash/g, '<pre><code>').replace(/```/g, '</code></pre>').replace(/`([^`]+)`/g, '<code>$1</code>').replace(/## (.*?)(<br\/>|$)/g, '<h2>$1</h2>').replace(/### (.*?)(<br\/>|$)/g, '<h3>$1</h3>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}
+            dangerouslySetInnerHTML={{ 
+              __html: post.content
+                .replace(/```bash\n([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+                .replace(/```([^`]+)```/g, '<pre><code>$1</code></pre>')
+                .replace(/`([^`]+)`/g, '<code>$1</code>')
+                .replace(/## (.*?)(\n|$)/g, '<h2>$1</h2>')
+                .replace(/### (.*?)(\n|$)/g, '<h3>$1</h3>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^(.*)$/, '<p>$1</p>')
+                .replace(/<p><h2>/g, '<h2>')
+                .replace(/<\/h2><\/p>/g, '</h2>')
+                .replace(/<p><h3>/g, '<h3>')
+                .replace(/<\/h3><\/p>/g, '</h3>')
+                .replace(/<p><pre>/g, '<pre>')
+                .replace(/<\/pre><\/p>/g, '</pre>')
+                .replace(/<p><ul>/g, '<ul>')
+                .replace(/<\/ul><\/p>/g, '</ul>')
+                .replace(/<p><li>/g, '<li>')
+                .replace(/<\/li><\/p>/g, '</li>')
+            }}
           />
 
           <div className="blog-post-footer">

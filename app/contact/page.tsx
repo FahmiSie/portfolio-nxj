@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Image from "next/image";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -28,31 +27,29 @@ export default function ContactPage() {
 
   const contactMethods = [
     { 
-      icon: "", 
-      iconPath: "", 
+      icon: "📧", 
+      iconPath: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg", 
       label: "Email", 
       value: "famtech.co@gmail.com", 
       link: "mailto:famtech.co@gmail.com" 
     },
     { 
-      icon: "", 
-      iconPath: "", 
+      icon: "💼", 
+      iconPath: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg", 
       label: "LinkedIn", 
       value: "linkedin.com/in/fahmiaqilamaulana", 
-      // Link diperbaiki agar mengarah ke profil asli
       link: "https://www.linkedin.com/in/fahmiaqilamaulana" 
     },
     { 
-      icon: "", 
-      iconPath: "", 
+      icon: "💻", 
+      iconPath: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg", 
       label: "GitHub", 
       value: "github.com/fahmisie",
-      // Link diperbaiki dengan HTTPS agar tidak dianggap folder lokal
       link: "https://github.com/fahmisie" 
     },
     { 
       icon: "📱", 
-      iconPath: "/images/social/phone-icon.svg", 
+      iconPath: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg", 
       label: "Phone", 
       value: "+62 82139163361", 
       link: "https://wa.me/6282139163361" 
@@ -97,13 +94,12 @@ export default function ContactPage() {
                 >
                   <span className="method-icon">
                     {method.iconPath ? (
-                      <Image
+                      <img
                         src={method.iconPath}
                         alt={method.label}
                         width={32}
                         height={32}
                         onError={(e) => {
-                          // Hide image dan show emoji fallback
                           const target = e.target as HTMLImageElement;
                           target.style.display = "none";
                           const parent = target.parentElement;
@@ -114,10 +110,11 @@ export default function ContactPage() {
                             parent.appendChild(fallback);
                           }
                         }}
-                        style={{ display: "inline-block" }}
+                        style={{ display: "inline-block", filter: 'invert(1)', width: '32px', height: '32px', objectFit: 'contain' }}
                       />
-                    ) : null}
-                    {!method.iconPath && <span>{method.icon}</span>}
+                    ) : (
+                      <span>{method.icon}</span>
+                    )}
                   </span>
                   <div>
                     <p className="method-label">{method.label}</p>
