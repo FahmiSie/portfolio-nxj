@@ -19,20 +19,25 @@ export default function Footer() {
 
   
   const socialLinks = [
-    { 
-      name: "GitHub", 
-      href: "https://github.com/fahmisie", 
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" 
-    },
-    { 
-      name: "LinkedIn", 
-      href: "https://www.linkedin.com/in/fahmiaqilamaulana", 
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" 
-    },
-    { 
-      name: "Email", 
-      href: "mailto:famtech.co@gmail.com", 
+    {
+      name: "Email",
+      href: "mailto:famtech.co@gmail.com",
       icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg"
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/fahmiaqilamaulana",
+      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+    },
+    {
+      name: "GitHub",
+      href: "https://github.com/fahmisie",
+      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+    },
+    {
+      name: "WhatsApp",
+      href: "https://wa.me/6282139163361",
+      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg"
     }
   ];
 
@@ -63,12 +68,12 @@ export default function Footer() {
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Image 
-                  src={social.icon} 
-                  alt={social.name} 
-                  width={20} 
+                <Image
+                  src={social.icon}
+                  alt={social.name}
+                  width={20}
                   height={20}
-                  className="opacity-80 hover:opacity-100 transition-opacity"
+                  className="opacity-80 hover:opacity-100 transition-opacity invert"
                 />
               </motion.a>
             ))}
@@ -116,10 +121,9 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      <div className="footer-bottom border-t border-white/5 py-8 mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-        <p>&copy; {currentYear} Fahmi Maulana. All rights reserved.</p>
-        <p className="footer-made mt-2 md:mt-0">
-          Made with ❤️ using <span className="text-blue-400">Next.js</span>
+      <div className="footer-bottom border-t border-white/5 py-8 mt-12 flex flex-col items-center justify-center text-center text-sm text-gray-500">
+  <p>&copy; {currentYear} Fahmi Maulana. All rights reserved.</p>
+  <p className="footer-made mt-2">
         </p>
       </div>
     </footer>

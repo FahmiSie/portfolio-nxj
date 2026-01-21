@@ -18,8 +18,18 @@ export default function ProfileCard3D() {
       mouseY.set(e.clientY / window.innerHeight - 0.5);
     };
 
-    window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", move);
+    // Aktifkan efek mouse hanya di perangkat dengan pointer presisi (desktop / laptop)
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+
+    if (mediaQuery.matches) {
+      window.addEventListener("mousemove", handleMove);
+    }
+
+    return () => {
+      if (mediaQuery.matches) {
+        window.removeEventListener("mousemove", handleMove);
+      }
+    };
   }, [mouseX, mouseY]);
 
   return (
@@ -72,5 +82,4 @@ export default function ProfileCard3D() {
 }
 
 function move(this: Window, ev: MouseEvent) {
-    throw new Error("Function not implemented.");
 }

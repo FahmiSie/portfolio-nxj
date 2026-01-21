@@ -32,8 +32,8 @@ const logoItems: LogoItem[] = [
 ];
 
 export default function LogoStrip({
-  title = "Worked At",
-  subtitle = "Great Companies",
+  title = "Visited Company",
+  subtitle = "This Great Companies",
 }: {
   title?: string;
   subtitle?: string;
@@ -42,7 +42,7 @@ export default function LogoStrip({
     <section className="home-section logo-strip">
       <div className="container">
         <div className="logo-strip-header">
-          <p className="logo-strip-kicker">Experienced</p>
+          <p className="logo-strip-kicker"></p>
           <h2 className="section-title">{title}</h2>
           <p className="section-subtitle">{subtitle}</p>
         </div>

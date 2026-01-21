@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 import { projectsData } from "@/components/projects";
 import LogoStrip from "../logo-strip";
+
 export default function HomeSections() {
   const featuredProjects = projectsData.slice(0, 3);
+  const [hasClickedConnect, setHasClickedConnect] = useState(false);
 
   return (
     <>
@@ -78,11 +81,33 @@ export default function HomeSections() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <p className="cta-kicker"></p>
             <h2>Let's Work Together</h2>
-            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-            <Link href="/contact" className="cta-button">
-              Get In Touch
+            <p>
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+              vision.
+            </p>
+
+            <Link href="/contact" className="cta-connect-link">
+              <motion.button
+  type="button"
+  className={`cta-pill ${hasClickedConnect ? "cta-pill-clicked" : ""}`}
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+  onClick={() => setHasClickedConnect(true)}
+>
+  <div className="cta-pill-inner">
+    <span className="cta-pill-label">Let&apos;s Connect</span>
+    <span className="cta-pill-sub">
+      {hasClickedConnect ? "Can’t wait to hear from you." : "Get in touch and let’s build something."}
+    </span>
+  </div>
+</motion.button>
             </Link>
+
+            <p className="cta-warning">
+              Feel free to contact me for any inquiries or collaboration opportunities.
+            </p>
           </motion.div>
         </div>
       </section>

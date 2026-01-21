@@ -11,8 +11,8 @@ body {
   overflow-x: hidden;
   /* Global grid background for all pages */
   background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -27,8 +27,10 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background-color: #0a0a0a; 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+  background-color: rgba(10,10,10,0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
 }
 
 .logo {
@@ -61,6 +63,19 @@ body {
   border-radius: 999px;
   color: black;
   font-weight: 600;
+  box-shadow: 0 10px 25px rgba(255, 92, 53, 0.35);
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(135deg, #ff7a4f, #ff5c35);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(255, 92, 53, 0.55);
+}
+
+.contact-btn.active {
+  background: #ffffff;
+  color: #0b0b0b;
 }
 
 .hero {
@@ -427,22 +442,36 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 120px 24px 60px;
+  }
+
+  .hero-content {
+    gap: 32px;
+  }
+
+  .lanyard3d-wrapper {
+    min-height: 65vh;
+    padding: 24px 16px 24px;
+  }
+
   .lanyard3d-card {
-    width: 320px;
-    padding: 45px 28px 20px;
+    width: 280px;
+    padding: 38px 22px 18px;
   }
 
   .lanyard3d-avatar {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
 
   .lanyard3d-title {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .lanyard3d-string {
-    height: 150px;
+    height: 120px;
   }
 }
 
@@ -1269,7 +1298,7 @@ body {
 /* Responsive Design */
 @media (max-width: 968px) {
   .navbar {
-    padding: 1rem 1.5rem;
+    padding: 0.9rem 1.4rem;
   }
 
   .hamburger {
@@ -1340,6 +1369,23 @@ body {
   .blog-grid,
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 80px;
+  }
+
+  .lanyard3d-wrapper {
+    min-height: 85vh;
+    padding: 40px 24px 24px;
+  }
+
+  .lanyard3d-card {
+    width: 300px;
+    padding: 42px 26px 20px;
   }
 }
 
@@ -1511,9 +1557,12 @@ body {
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, rgba(255, 92, 53, 0.1) 0%, rgba(255, 92, 53, 0.05) 100%);
+  background: radial-gradient(circle at top, rgba(255, 92, 53, 0.3) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(255, 92, 53, 0.18) 0%, rgba(10, 10, 10, 0.98) 55%, rgba(0, 0, 0, 1) 100%);
   border-top: 1px solid rgba(255, 92, 53, 0.2);
   border-bottom: 1px solid rgba(255, 92, 53, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .cta-content {
@@ -1534,21 +1583,68 @@ body {
   line-height: 1.8;
 }
 
-.cta-button {
-  display: inline-block;
-  padding: 18px 40px;
-  background: #ff5c35;
-  color: black;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+/* Warna Awal: OREN */
+.cta-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 999px;
+  /* Gradient oranye sebagai dasar */
+  background: linear-gradient(135deg, #ff5c35, #ff8c66);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 24px 60px rgba(255, 92, 53, 0.3);
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cta-button:hover {
-  background: #ff8c66;
-  transform: translateY(-3px);
+.cta-pill-inner {
+  border-radius: 999px;
+  padding: 16px 34px;
+  /* Transparan agar warna oranye dari parent terlihat, 
+     atau beri warna oranye solid jika ingin menutup gradient */
+  background: transparent; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  justify-content: center;
+  gap: 6px;
+  min-width: min(90vw, 480px);
+  text-align: center;
+}
+
+.cta-pill-label {
+  color: #0b0b0b; /* Teks gelap di atas oranye */
+  font-size: clamp(1.25rem, 2.6vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.cta-pill-sub {
+  color: rgba(0, 0, 0, 0.7); /* Teks sub gelap transparan */
+  font-size: 0.92rem;
+}
+
+/* --- STATE SAAT DIKLIK: JADI HITAM --- */
+
+.cta-pill-clicked {
+  background: #050505;
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+}
+
+.cta-pill-clicked .cta-pill-inner {
+  background: #000000;
+}
+
+.cta-pill-clicked .cta-pill-label {
+  color: #ffffff; /* Teks jadi putih di atas hitam */
+}
+
+.cta-pill-clicked .cta-pill-sub {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Footer */

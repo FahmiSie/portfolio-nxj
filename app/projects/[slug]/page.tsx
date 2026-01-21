@@ -15,6 +15,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
 
   const projectDetails: Record<string, any> = {
     "cashier-system": {
+      heroImage: "https://cdn.dribbble.com/userupload/9621983/file/original-9dcc3ecf039af151c7c9d761c06070d8.png?format=webp&resize=400x300&vertical=center",
       overview: "A comprehensive cashier system built with JavaFX and MySQL database integration. This desktop application provides a complete solution for retail businesses to manage their daily operations efficiently.",
       features: [
         "Inventory management with real-time stock tracking",
@@ -30,6 +31,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
       results: "Successfully deployed and used by local retail stores, reducing manual work by 70% and improving inventory accuracy."
     },
     "portfolio-website": {
+      heroImage: "/public/image/profile/profile.png",
       overview: "A modern, interactive portfolio website showcasing my work as a fullstack developer. Built with Next.js and featuring cutting-edge animations and 3D effects.",
       features: [
         "3D lanyard component with mouse interaction",
@@ -45,6 +47,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
       results: "Created a unique portfolio that stands out, with smooth 60fps animations and positive feedback from visitors."
     },
     "finance-dashboard": {
+      heroImage: "https://cdn.dribbble.com/userupload/16822681/file/original-8e18053ef74017d4bf551ad5975bdd36.png?resize=2048x1536&vertical=center",
       overview: "A comprehensive financial analytics dashboard that helps users track investments, calculate ROI, and make data-driven financial decisions.",
       features: [
         "Real-time financial data visualization",
@@ -60,6 +63,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
       results: "Currently in development. Beta version shows promising results with accurate calculations and smooth performance."
     },
     "ecommerce-api": {
+      heroImage: "https://td-mainsite-cdn.tutorialsdojo.com/wp-content/uploads/2023/02/CP-API.png",
       overview: "A robust RESTful API for an e-commerce platform, providing all necessary endpoints for product management, user authentication, and order processing.",
       features: [
         "JWT-based authentication system",
@@ -76,6 +80,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
       results: "Successfully deployed API serving thousands of requests daily with 99.9% uptime and secure transaction processing."
     },
     "cloud-deployment": {
+      heroImage: "https://td-mainsite-cdn.tutorialsdojo.com/wp-content/uploads/2023/02/CP-CICD.png",
       overview: "An automated deployment tool that simplifies CI/CD pipelines and cloud resource management for AWS infrastructure.",
       features: [
         "Automated CI/CD pipeline setup",
