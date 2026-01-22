@@ -1,3 +1,17 @@
+/**
+ * PROJECTS DATA
+ * 
+ * Untuk menggunakan gambar lokal:
+ * 1. Letakkan file gambar di folder public/image/projects/
+ * 2. Gunakan path yang dimulai dengan "/" (tanpa "/public")
+ *    Contoh: "/image/projects/nama-file.png"
+ * 
+ * Untuk menggunakan gambar dari URL eksternal:
+ * - Gunakan URL lengkap dengan https://
+ * - Pastikan domain sudah ditambahkan di next.config.ts (remotePatterns)
+ * 
+ * Jika gambar tidak ditemukan, akan otomatis menampilkan emoji icon sebagai fallback
+ */
 
 export const projectsData = [
     {
@@ -7,7 +21,7 @@ export const projectsData = [
         "category": "web",
         "tech": "Java, JavaFX, MySQL",
         "image": "💻",
-        "imagePath": "/images/projects/cashier-system.jpg",
+        "imagePath": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
         "status": "Completed"
     },
     {
@@ -17,7 +31,11 @@ export const projectsData = [
         "category": "web",
         "tech": "Next.js, TypeScript, Tailwind CSS, Framer Motion",
         "image": "🌐",
-        "imagePath": "/images/projects/portfolio-website.jpg",
+        // Contoh penggunaan gambar lokal:
+        // Opsi 1: "/image/projects/portfolio-website.png" (folder khusus project)
+        // Opsi 2: "/image/profile/portfolio.png" (jika file ada di folder profile)
+        // Pastikan file benar-benar ada di folder public/image/projects/ atau public/image/profile/
+        "imagePath": "/image/profile/portfolio.png", // Ganti dengan path gambar lokal Anda
         "status": "Completed"
     },
     {
@@ -27,7 +45,7 @@ export const projectsData = [
         "category": "finance",
         "tech": "React, Chart.js, Node.js, MySQL",
         "image": "📊",
-        "imagePath": "/images/projects/finance-dashboard.jpg",
+        "imagePath": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
         "status": "In Progress"
     },
     {
@@ -37,7 +55,7 @@ export const projectsData = [
         "category": "backend",
         "tech": "NestJS, TypeScript, MySQL, JWT",
         "image": "🛒",
-        "imagePath": "/images/projects/ecommerce-api.jpg",
+        "imagePath": "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&q=80",
         "status": "Completed"
     },
     {
@@ -47,7 +65,7 @@ export const projectsData = [
         "category": "devops",
         "tech": "AWS, Docker, GitHub Actions, Python",
         "image": "☁️",
-        "imagePath": "/images/projects/cloud-deployment.jpg",
+        "imagePath": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
         "status": "In Progress"
     }
 ]

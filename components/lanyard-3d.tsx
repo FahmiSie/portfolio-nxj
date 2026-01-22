@@ -18,7 +18,6 @@ export default function ProfileCard3D() {
       mouseY.set(e.clientY / window.innerHeight - 0.5);
     };
 
-    // Aktifkan efek mouse hanya di perangkat dengan pointer presisi (desktop / laptop)
     const mediaQuery = window.matchMedia("(pointer: fine)");
 
     if (mediaQuery.matches) {
@@ -69,11 +68,11 @@ export default function ProfileCard3D() {
             />
           </div>
 
-          <div className="lanyard3d-role" style={{ transform: "translateZ(30px)" }}>Finance</div>
+          <div className="lanyard3d-role" style={{ transform: "translateZ(30px)" }}>Finance Analyst</div>
           <h3 className="lanyard3d-title" style={{ transform: "translateZ(40px)" }}>Fullstack<br/>DEV</h3>
 
           <div className="lanyard3d-footer">
-            <span>© 2024 - 2026 • CREATED BY FAM</span>
+            <span>Investor and Entrepreneur</span>
           </div>
         </div>
       </motion.div>

@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function ResumePage() {
   const education = [
     {
-      period: "2022 - Present",
+      period: "2024 - Present",
       institution: "SMK Telkom Malang",
       program: "Rekayasa Perangkat Lunak (RPL)",
       description: "Focusing on software development, database management, and web technologies."
@@ -15,16 +15,16 @@ export default function ResumePage() {
 
   const experiences = [
     {
-      period: "2024 - Present",
+      period: "2025 - Present",
       title: "Fullstack Developer",
       company: "Freelance / Projects",
       description: "Building full-stack web applications using modern technologies like Next.js, NestJS, and MySQL. Working on various client projects and personal initiatives.",
       technologies: ["Next.js", "NestJS", "MySQL", "AWS", "TypeScript"]
     },
     {
-      period: "2023 - 2024",
+      period: "2023 - Present",
       title: "Tech & Finance Enthusiast",
-      company: "Self Learning",
+      company: "Invesmnet",
       description: "Deep dive into financial technologies, investment analysis, and integrating finance concepts with tech solutions.",
       technologies: ["Finance Analysis", "ROI Calculation", "Data-Driven Decisions"]
     }
@@ -32,8 +32,9 @@ export default function ResumePage() {
 
   const certifications = [
     "Fullstack Web Development Certificate",
-    "Database Management Systems",
-    "Cloud Computing Basics (AWS)"
+    "Cloud Computing Basics (AWS)",
+    "Best Tennis Player Besuki Comp (2023)",
+    "2st Winner Dodikjur Tennis Open Comp (2023)"
   ];
 
   return (

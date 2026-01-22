@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { projectsData } from "@/components/projects";
 import LogoStrip from "../logo-strip";
@@ -47,7 +48,31 @@ export default function HomeSections() {
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -10 }}
               >
-                <div className="featured-icon">{project.image}</div>
+                <div className="featured-image-wrapper">
+                  {project.imagePath ? (
+                    <Image
+                      src={project.imagePath}
+                      alt={project.title}
+                      fill
+                      className="featured-image"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                        if (target.nextElementSibling) {
+                          (target.nextElementSibling as HTMLElement).style.display = "flex";
+                        }
+                      }}
+                    />
+                  ) : null}
+                  <div 
+                    className="featured-icon" 
+                    style={{ display: project.imagePath ? "none" : "flex" }}
+                  >
+                    {project.image}
+                  </div>
+                </div>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <Link href={`/projects/${project.slug}`} className="featured-link">
